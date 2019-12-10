@@ -83,7 +83,7 @@ mixedr2 <- function(data, returnfit=FALSE){
   }
   
   # r.squared.merMod
-  xr2 <- function(x)unlist(sapply(x,  r.squaredGLMM)["R2m",])
+  xr2 <- function(x)unlist(sapply(x,  r.squaredGLMM)[1, ])
   r2g <- as.data.frame(t(sapply(mods, xr2)))
   
   tabg <- cbind(as.data.frame(varlabel), r2g)

@@ -2,14 +2,14 @@
 
 \usepackage{amssymb,amsmath}
 \usepackage{palatino}
-\usepackage[default,osfigures,scale=0.95]{opensans}
+\usepackage[default,scale=0.95]{opensans}
 \usepackage{geometry}
 \usepackage{authblk}
 \usepackage{gensymb}
 \geometry{verbose,tmargin=2.4cm,bmargin=2.4cm,lmargin=2.4cm,rmargin=2.4cm}
 \usepackage{parskip}
 
-\input{common-defs}
+\input{ms/common-defs}
 
 \begin{document}
 
@@ -59,6 +59,6 @@
 \end{figure}
 
 \clearpage
-\bibliography{references}
+\bibliography{ms/references}
 
 \end{document}

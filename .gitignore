@@ -9,17 +9,17 @@
 .Rproj.user
 *.Rproj
 
+.local
 .maker
 .remake
-downloads
 
 *.log
 *.pdf
-*.png
 *.rtf
 *.synctex.gz
 *.html
 *.tex
+!ms/common-defs.tex
 *.bbl
 *.aux
 *.blg
