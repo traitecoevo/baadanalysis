@@ -1,6 +1,10 @@
 callr:
   source: github
   repo: traitecoevo/callr
+  
+datastorr:
+  source: github
+  repo: richfitz/datastorr
 
 baad.data:
   source: github

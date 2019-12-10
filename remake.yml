@@ -2,6 +2,7 @@ packages:
   # dataset construction
   - downloader
   - stringr
+  - datastorr
   - baad.data
   # statistics
   - multcomp  #cld
@@ -22,6 +23,7 @@ packages:
   - grid
   - gridBase  # Fig1a
   - gridExtra # Fig1a
+  - tinytex   # for building pdf from .tex files
 
 sources:
   - R/data_processing.R
@@ -58,10 +60,10 @@ plot_options:
 targets:
   all:
     depends:
-      - manuscript.pdf
-      - manuscript_suppinfo.pdf
+      - ms/manuscript.pdf
+      - ms/manuscript_suppinfo.pdf
 
-  manuscript.pdf:
+  ms/manuscript.pdf:
     depends:
       - figures/Figure1.pdf
       - figures/Figure2.pdf
@@ -73,9 +75,9 @@ targets:
       - table_samplesize
       - afas
       - msas
-    command: latex_build("manuscript.tex", bibliography = "references.bib", clean=TRUE)
+    command: pdflatex("ms/manuscript.tex")
 
-  manuscript.tex:
+  ms/manuscript.tex:
     depends:
       - baad_all
       - baad_mapmat
@@ -87,7 +89,7 @@ targets:
       - dataset
     knitr: TRUE
 
-  manuscript_suppinfo.pdf:
+  ms/manuscript_suppinfo.pdf:
     depends:
       - figures/FigureS1.pdf
       - figures/FigureS2.pdf
@@ -97,9 +99,9 @@ targets:
       - table_varpart_gam_old
       - table_varpart_lmer
       - table_hierpart
-    command: latex_build ("manuscript_suppinfo.tex", bibliography = "references.bib", clean=TRUE)
+    command: pdflatex("ms/manuscript_suppinfo.tex")
 
-  manuscript_suppinfo.tex:
+  ms/manuscript_suppinfo.tex:
     depends:
       - table_varpart_gam_old
       - table_varpart_lmer
@@ -132,7 +134,7 @@ targets:
   baad_mapmat:
     command: prepare_baadmapmat(baad_climate1)
   world_mapmat:
-    command: prepare_worldmapmat("data/Worldclim_landcover_climspace_withcover.rds")
+    command: prepare_worldmapmat("data/worldclim_landcover_climspace_withcover.rds")
   dataset:
     command: prepare_dataset_1(baad_climate3, plantations=TRUE)
   baad_climate1:
@@ -143,9 +145,6 @@ targets:
     command: addPET(baad_climate2, "data/zomerpet.rds")
   baad_all:
     command: baad_data(I("1.0.0"))
-  downloads/baad.rds:
-    command: download_baad(target_name)
-    cleanup_level: purge
   cfg:
     command: extract_baad_dictionary(baad_all)
 
@@ -203,9 +202,4 @@ targets:
   figures/FigureS5.pdf:
     command: figureS5(dataset)
     plot: wide
-
-
-  downloads/ian-symbol-eucalyptus-spp-1.png:
-    command: download_tree_png(target_name)
-    cleanup_level: purge
 

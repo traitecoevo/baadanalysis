@@ -1,0 +1,46 @@
+Type: Compendium
+Package: baadanalysis
+Title: Leaf mass per area, not total leaf area, drives differences in above-ground biomass distribution among woody plant functional types
+Version: 1.0.1
+Authors@R: c(
+    person(given = "Remko",
+           family = "Duursma",
+           role = c("aut", "cre"),
+           email = "r.duursma@westernsydney.edu.au"),
+    person(given = "Daniel",
+           family = "Falster", 
+           role = "aut",
+           email = "daniel.falster@unsw.edu.au",
+           comment = c(ORCID = "0000-0002-9814-092X"))
+    )
+Description: This repository contains code needed to reproduce the article: Duursma RA, Falster DS, "Leaf mass per area, not total leaf area, drives differences in above-ground biomass distribution among woody plant functional types", New Phytologist (accepted 2016-04-28).
+License: MIT + file LICENSE
+Depends: 
+    baad.data,
+    car,
+    datastorr,
+    doBy,
+    downloader,
+    grid,
+    gridBase,
+    gridExtra,
+    gtools,
+    hexbin,
+    hier.part,
+    knitr,
+    lmerTest,
+    magicaxis,
+    maptools,
+    mgcv,
+    multcomp,
+    MuMIn,
+    png,
+    RColorBrewer,
+    stringr,
+    tinytex,
+    xtable
+Remotes: 
+    richfitz/datastorr,
+    traitecoevo/baad.data
+Encoding: UTF-8
+LazyData: true
