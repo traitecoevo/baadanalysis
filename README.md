@@ -2,7 +2,7 @@
 
 This repository contains code needed to reproduce the article:
 
-**Duursma RA, Falster DS**, "Leaf mass per area, not total leaf area, drives differences in above-ground biomass distribution among woody plant functional types", New Phytologist (accepted 2016-04-28).
+**Duursma RA, Falster DS**, "Leaf mass per area, not total leaf area, drives differences in above-ground biomass distribution among woody plant functional types", New Phytologist 212 (2): 368-376. doi: [10.1111/nph.14033](http://doi.org/10.1111/nph.14033)
 
 [![DOI](https://zenodo.org/badge/11128/RemkoDuursma/baadanalysis.svg)](https://zenodo.org/badge/latestdoi/11128/RemkoDuursma/baadanalysis)
 
